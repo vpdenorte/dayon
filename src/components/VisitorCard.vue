@@ -51,10 +51,9 @@
           first_name,
           last_name,
           contact_number,
-          card,
           rooms,
         }"
-        @submit="edit({ id, ...$event })"
+        @submit="edit({ id, card, ...$event })"
       >
         <template #title>Edit card</template>
       </VisitorForm>

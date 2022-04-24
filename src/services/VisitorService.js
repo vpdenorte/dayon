@@ -13,12 +13,11 @@ export default {
   get(id) {
     return apiClient.get(`/${id}/`)
   },
-  add({ first_name, last_name, contact_number, card, rooms }) {
+  add({ first_name, last_name, contact_number, rooms }) {
     return apiClient.post('/', {
       first_name,
       last_name,
       contact_number,
-      card,
       rooms,
     })
   },

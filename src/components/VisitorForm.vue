@@ -33,15 +33,6 @@
       />
 
       <BaseSelect
-        :disabled="disable.card"
-        label="Card"
-        :items="cards"
-        item-text="name"
-        item-value="uid"
-        v-model="form.card"
-      />
-
-      <BaseSelect
         multiple
         :disabled="disable.rooms"
         :rules="rules.required"
@@ -72,7 +63,6 @@ export default {
           first_name: false,
           last_name: false,
           contact_number: false,
-          card: false,
           rooms: false,
         }
       },
@@ -84,7 +74,6 @@ export default {
           first_name: null,
           last_name: null,
           contact_number: null,
-          card: null,
           rooms: [],
         }
       },
@@ -97,7 +86,6 @@ export default {
   },
   computed: {
     ...mapState({
-      cards: (state) => state.card.cards,
       rooms: (state) => state.room.rooms,
       rules: (state) => state.rules,
     }),
