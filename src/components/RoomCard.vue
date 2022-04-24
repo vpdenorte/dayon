@@ -5,6 +5,14 @@
     <template #subtitle>{{ board_id }}</template>
 
     <template #actions>
+      <v-btn
+        icon
+        :to="{ name: 'room-home', params: { id: board_id } }"
+        target="_blank"
+      >
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+
       <v-btn icon @click="editDialog = true">
         <v-icon>mdi-pencil-outline</v-icon>
       </v-btn>
