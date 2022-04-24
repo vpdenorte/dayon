@@ -59,6 +59,11 @@ export default {
           icon: 'mdi-account-multiple',
           link: 'Visitors',
         },
+        {
+          title: 'Logs',
+          icon: 'mdi-file-document-outline',
+          link: 'admin-logs',
+        },
       ],
     }
   },

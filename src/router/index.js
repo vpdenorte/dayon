@@ -5,6 +5,7 @@ import Admin from '@/views/Admin.vue'
 import AdminRooms from '@/views/AdminRooms.vue'
 import AdminCards from '@/views/AdminCards.vue'
 import AdminVisitors from '@/views/AdminVisitors.vue'
+import AdminLogs from '@/views/AdminLogs.vue'
 import Preregister from '@/views/Preregister.vue'
 import Room from '@/views/Room.vue'
 import RoomHome from '@/views/RoomHome.vue'
@@ -46,6 +47,11 @@ const routes = [
         path: 'visitors',
         name: 'Visitors',
         component: AdminVisitors,
+      },
+      {
+        path: 'logs',
+        name: 'admin-logs',
+        component: AdminLogs,
       },
     ],
   },
