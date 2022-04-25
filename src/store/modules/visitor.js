@@ -44,7 +44,6 @@ export const actions = {
         first_name: item.first_name,
         last_name: item.last_name,
         contact_number: item.contact_number,
-        card: item.card,
         rooms: item.rooms,
       })
       const data = response.data
@@ -114,22 +113,6 @@ export const actions = {
 
       return Promise.reject()
     }
-  },
-  preregisterVisitor({ commit }, item) {
-    VisitorService.preregister({
-      first_name: item.first_name,
-      last_name: item.last_name,
-      rooms: item.rooms,
-    })
-      .then((response) => {
-        const data = response.data
-
-        commit('APPEND_VISITOR', data)
-        console.log(data)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
   },
   async linkVisitorCard({ commit, dispatch }, { id, card, duration }) {
     try {
