@@ -163,6 +163,26 @@ export const actions = {
       return Promise.reject()
     }
   },
+  async applySettings({ commit, dispatch }, { board_id, capacity }) {
+    try {
+      const response = await RoomService.updateSettings({ board_id, capacity })
+      const data = response.data
+
+      commit('SET_ROOM', data)
+      dispatch('displayToast', 'Setting applied successfully', { root: true })
+      console.log('Setting applied', JSON.parse(JSON.stringify(response)))
+
+      return Promise.resolve()
+    } catch (error) {
+      dispatch('displayToast', 'Failed to apply setting', { root: true })
+      console.error(
+        'Error updating room availability',
+        JSON.parse(JSON.stringify(error))
+      )
+
+      return Promise.reject()
+    }
+  },
 }
 
 export const getters = {

@@ -25,4 +25,7 @@ export default {
   updateAvailability({ board_id, is_accepting }) {
     return apiClient.patch(`/${board_id}/`, { is_accepting })
   },
+  updateSettings({ board_id, capacity }) {
+    return apiClient.patch(`/${board_id}/`, { capacity })
+  },
 }
