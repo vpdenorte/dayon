@@ -6,6 +6,10 @@
       <v-toolbar-title>Dayon</v-toolbar-title>
 
       <v-spacer></v-spacer>
+
+      <v-btn icon :to="{ name: 'admin-settings' }">
+        <v-icon>mdi-cog-outline</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer app v-model="drawer" clipped>

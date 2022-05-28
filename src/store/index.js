@@ -25,6 +25,9 @@ export default new Vuex.Store({
         (v) => (v && v.length > 0) || 'This field is required',
       ],
     },
+    settings: {
+      emergencyMode: null,
+    },
   },
   mutations: {
     setToastState(state, value) {
@@ -33,11 +36,18 @@ export default new Vuex.Store({
     setToastMessage(state, value) {
       state.toast.message = value
     },
+    setSettings(state, value) {
+      state.settings = value
+    },
   },
   actions: {
     displayToast({ commit }, message) {
       commit('setToastMessage', message)
       commit('setToastState', true)
+    },
+    applySettings({ commit, dispatch }, settings) {
+      commit('setSettings', settings)
+      dispatch('displayToast', 'Settings applied')
     },
   },
   getters: {
